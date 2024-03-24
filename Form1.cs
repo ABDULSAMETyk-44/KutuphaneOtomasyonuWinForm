@@ -20,11 +20,11 @@ namespace KutuphaneOtomasyonuWinForm
 
         private void personelgirisbuton_Click(object sender, EventArgs e)
         {
-            string gelenAd=personeladbuton.Text;
-            string gelenSifre=parolagirisbuton.Text;
+            //string gelenAd=personeladbuton.Text;
+            //string gelenSifre=parolagirisbuton.Text;
 
             // linq sorgusu
-            var personel= db.Personeller.Where(x=> x.personel_ad.Equals(gelenAd)&& x.personel_sifre.Equals(gelenSifre)).FirstOrDefault();
+            //var personel= db.Personeller.Where(x=> x.personel_ad.Equals(gelenAd)&& x.personel_sifre.Equals(gelenSifre)).FirstOrDefault();
 
             //if (personel == null)
             //{
