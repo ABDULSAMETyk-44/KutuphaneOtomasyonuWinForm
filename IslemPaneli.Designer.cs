@@ -30,23 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IslemPaneli));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.searchtextBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
             this.butonLogOut = new System.Windows.Forms.Button();
             this.emanetButton = new System.Windows.Forms.Button();
             this.kitapButton = new System.Windows.Forms.Button();
             this.kullanicilarButonu = new System.Windows.Forms.Button();
             this.kullaniciBilgiPanel = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dgvEmanet = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmanet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.searchtextBox);
+            this.panel1.Controls.Add(this.searchButton);
             this.panel1.Controls.Add(this.butonLogOut);
             this.panel1.Controls.Add(this.emanetButton);
             this.panel1.Controls.Add(this.kitapButton);
@@ -56,6 +56,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(215, 650);
             this.panel1.TabIndex = 0;
+            // 
+            // searchtextBox
+            // 
+            this.searchtextBox.Location = new System.Drawing.Point(83, 551);
+            this.searchtextBox.Name = "searchtextBox";
+            this.searchtextBox.Size = new System.Drawing.Size(100, 22);
+            this.searchtextBox.TabIndex = 0;
+            // 
+            // searchButton
+            // 
+            this.searchButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchButton.BackgroundImage")));
+            this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchButton.Location = new System.Drawing.Point(12, 538);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(64, 49);
+            this.searchButton.TabIndex = 1;
+            this.searchButton.UseVisualStyleBackColor = true;
             // 
             // butonLogOut
             // 
@@ -70,6 +87,7 @@
             this.butonLogOut.Text = "Çıkış Yap";
             this.butonLogOut.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.butonLogOut.UseVisualStyleBackColor = true;
+            this.butonLogOut.Click += new System.EventHandler(this.butonLogOut_Click);
             // 
             // emanetButton
             // 
@@ -123,47 +141,31 @@
             this.kullaniciBilgiPanel.Size = new System.Drawing.Size(585, 43);
             this.kullaniciBilgiPanel.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvEmanet
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(248, 60);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(518, 354);
-            this.dataGridView1.TabIndex = 33;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(83, 551);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(12, 538);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 49);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
+            this.dgvEmanet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmanet.Location = new System.Drawing.Point(248, 60);
+            this.dgvEmanet.Name = "dgvEmanet";
+            this.dgvEmanet.RowHeadersWidth = 51;
+            this.dgvEmanet.RowTemplate.Height = 24;
+            this.dgvEmanet.Size = new System.Drawing.Size(518, 354);
+            this.dgvEmanet.TabIndex = 33;
             // 
             // IslemPaneli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 650);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvEmanet);
             this.Controls.Add(this.kullaniciBilgiPanel);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IslemPaneli";
             this.Text = "IslemPaneli";
             this.Load += new System.EventHandler(this.IslemPaneli_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmanet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,8 +178,8 @@
         private System.Windows.Forms.Button butonLogOut;
         private System.Windows.Forms.Button emanetButton;
         private System.Windows.Forms.Button kitapButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.TextBox searchtextBox;
+        private System.Windows.Forms.DataGridView dgvEmanet;
     }
 }

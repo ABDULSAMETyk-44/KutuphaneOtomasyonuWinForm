@@ -12,9 +12,24 @@ namespace KutuphaneOtomasyonuWinForm
 {
     public partial class IslemPaneli : Form
     {
+        public DataTable dtEmanet;
+
+        Form1 form =new Form1();
         public IslemPaneli()
         {
             InitializeComponent();
+        }
+        public IslemPaneli(Form1 form)
+        {
+            this.form = form;
+            InitializeComponent();
+            dtEmanet = new DataTable();
+            dtEmanet.Columns.Add("Kitap Adı");
+            dtEmanet.Columns.Add("Alan Kişi");
+            dtEmanet.Columns.Add("Telefon No");
+            dtEmanet.Columns.Add("TC");
+
+            dgvEmanet.DataSource = dtEmanet;
         }
 
         private void IslemPaneli_Load(object sender, EventArgs e)
@@ -35,7 +50,7 @@ namespace KutuphaneOtomasyonuWinForm
 
         private void button6_Click(object sender, EventArgs e)
         {
-            emanetFormu emanetPanel = new emanetFormu();
+            emanetFormu emanetPanel = new emanetFormu(this);
             emanetPanel.ShowDialog();
         }
 
@@ -43,6 +58,11 @@ namespace KutuphaneOtomasyonuWinForm
         {
             kitapFormu kitapPanel =new kitapFormu();
             kitapPanel.ShowDialog();
+        }
+
+        private void butonLogOut_Click(object sender, EventArgs e)
+        {
+            form.Close();
         }
     }
 }

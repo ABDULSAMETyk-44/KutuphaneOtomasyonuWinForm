@@ -38,7 +38,7 @@ namespace KutuphaneOtomasyonuWinForm
             //    this.Hide();
 
             //}
-            IslemPaneli Panel = new IslemPaneli();
+            IslemPaneli Panel = new IslemPaneli(this);
             Panel.Show();
             this.Hide();
 

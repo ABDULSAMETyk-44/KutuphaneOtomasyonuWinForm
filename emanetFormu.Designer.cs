@@ -30,17 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(emanetFormu));
             this.emanetSüresiUzat = new System.Windows.Forms.Button();
-            this.emanetGüncelle1 = new System.Windows.Forms.Button();
+            this.emanetGüncelle = new System.Windows.Forms.Button();
             this.emanetSil = new System.Windows.Forms.Button();
             this.emanetEkle = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.emanet_tc_textBox = new System.Windows.Forms.TextBox();
+            this.emanet_tc_label = new System.Windows.Forms.Label();
+            this.emanet_tel_no_textBox = new System.Windows.Forms.TextBox();
+            this.emanet_tel_no_label = new System.Windows.Forms.Label();
+            this.emanetalankisitextBox = new System.Windows.Forms.TextBox();
+            this.emanetalankisilabel = new System.Windows.Forms.Label();
+            this.emanetkitapaditextBox = new System.Windows.Forms.TextBox();
+            this.emanetkitapadilabel = new System.Windows.Forms.Label();
+            this.buttonDosyaKaydetEmanet = new System.Windows.Forms.Button();
+            this.buttonDosyadanOkuEmanet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // emanetSüresiUzat
@@ -57,17 +59,17 @@
             this.emanetSüresiUzat.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.emanetSüresiUzat.UseVisualStyleBackColor = true;
             // 
-            // emanetGüncelle1
+            // emanetGüncelle
             // 
-            this.emanetGüncelle1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("emanetGüncelle1.BackgroundImage")));
-            this.emanetGüncelle1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.emanetGüncelle1.Location = new System.Drawing.Point(12, 88);
-            this.emanetGüncelle1.Name = "emanetGüncelle1";
-            this.emanetGüncelle1.Size = new System.Drawing.Size(209, 32);
-            this.emanetGüncelle1.TabIndex = 16;
-            this.emanetGüncelle1.Text = "Güncelle";
-            this.emanetGüncelle1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.emanetGüncelle1.UseVisualStyleBackColor = true;
+            this.emanetGüncelle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("emanetGüncelle.BackgroundImage")));
+            this.emanetGüncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.emanetGüncelle.Location = new System.Drawing.Point(12, 88);
+            this.emanetGüncelle.Name = "emanetGüncelle";
+            this.emanetGüncelle.Size = new System.Drawing.Size(209, 32);
+            this.emanetGüncelle.TabIndex = 16;
+            this.emanetGüncelle.Text = "Güncelle";
+            this.emanetGüncelle.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.emanetGüncelle.UseVisualStyleBackColor = true;
             // 
             // emanetSil
             // 
@@ -93,86 +95,110 @@
             this.emanetEkle.Text = "Ekle ";
             this.emanetEkle.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.emanetEkle.UseVisualStyleBackColor = true;
+            this.emanetEkle.Click += new System.EventHandler(this.emanetEkle_Click);
             // 
-            // textBox4
+            // emanet_tc_textBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(70, 411);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 31;
+            this.emanet_tc_textBox.Location = new System.Drawing.Point(64, 409);
+            this.emanet_tc_textBox.Name = "emanet_tc_textBox";
+            this.emanet_tc_textBox.Size = new System.Drawing.Size(100, 22);
+            this.emanet_tc_textBox.TabIndex = 31;
             // 
-            // label4
+            // emanet_tc_label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(80, 392);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 16);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "T.C. Kimlik No";
+            this.emanet_tc_label.AutoSize = true;
+            this.emanet_tc_label.Location = new System.Drawing.Point(74, 390);
+            this.emanet_tc_label.Name = "emanet_tc_label";
+            this.emanet_tc_label.Size = new System.Drawing.Size(90, 16);
+            this.emanet_tc_label.TabIndex = 30;
+            this.emanet_tc_label.Text = "T.C. Kimlik No";
             // 
-            // textBox3
+            // emanet_tel_no_textBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(70, 336);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 29;
+            this.emanet_tel_no_textBox.Location = new System.Drawing.Point(64, 365);
+            this.emanet_tel_no_textBox.Name = "emanet_tel_no_textBox";
+            this.emanet_tel_no_textBox.Size = new System.Drawing.Size(100, 22);
+            this.emanet_tel_no_textBox.TabIndex = 29;
             // 
-            // label3
+            // emanet_tel_no_label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(90, 317);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 16);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Telefon No";
+            this.emanet_tel_no_label.AutoSize = true;
+            this.emanet_tel_no_label.Location = new System.Drawing.Point(84, 346);
+            this.emanet_tel_no_label.Name = "emanet_tel_no_label";
+            this.emanet_tel_no_label.Size = new System.Drawing.Size(74, 16);
+            this.emanet_tel_no_label.TabIndex = 28;
+            this.emanet_tel_no_label.Text = "Telefon No";
             // 
-            // textBox2
+            // emanetalankisitextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(70, 268);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 27;
+            this.emanetalankisitextBox.Location = new System.Drawing.Point(64, 321);
+            this.emanetalankisitextBox.Name = "emanetalankisitextBox";
+            this.emanetalankisitextBox.Size = new System.Drawing.Size(100, 22);
+            this.emanetalankisitextBox.TabIndex = 27;
             // 
-            // label2
+            // emanetalankisilabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(92, 249);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 16);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Alan Kişi";
+            this.emanetalankisilabel.AutoSize = true;
+            this.emanetalankisilabel.Location = new System.Drawing.Point(86, 302);
+            this.emanetalankisilabel.Name = "emanetalankisilabel";
+            this.emanetalankisilabel.Size = new System.Drawing.Size(58, 16);
+            this.emanetalankisilabel.TabIndex = 26;
+            this.emanetalankisilabel.Text = "Alan Kişi";
             // 
-            // textBox1
+            // emanetkitapaditextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(70, 192);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 25;
+            this.emanetkitapaditextBox.Location = new System.Drawing.Point(64, 277);
+            this.emanetkitapaditextBox.Name = "emanetkitapaditextBox";
+            this.emanetkitapaditextBox.Size = new System.Drawing.Size(100, 22);
+            this.emanetkitapaditextBox.TabIndex = 25;
+            this.emanetkitapaditextBox.TextChanged += new System.EventHandler(this.emanetkitapaditextBox_TextChanged);
             // 
-            // label1
+            // emanetkitapadilabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 173);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 16);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Kitap Adı";
+            this.emanetkitapadilabel.AutoSize = true;
+            this.emanetkitapadilabel.Location = new System.Drawing.Point(84, 258);
+            this.emanetkitapadilabel.Name = "emanetkitapadilabel";
+            this.emanetkitapadilabel.Size = new System.Drawing.Size(60, 16);
+            this.emanetkitapadilabel.TabIndex = 24;
+            this.emanetkitapadilabel.Text = "Kitap Adı";
+            // 
+            // buttonDosyaKaydetEmanet
+            // 
+            this.buttonDosyaKaydetEmanet.Location = new System.Drawing.Point(12, 181);
+            this.buttonDosyaKaydetEmanet.Name = "buttonDosyaKaydetEmanet";
+            this.buttonDosyaKaydetEmanet.Size = new System.Drawing.Size(209, 23);
+            this.buttonDosyaKaydetEmanet.TabIndex = 33;
+            this.buttonDosyaKaydetEmanet.Text = "Dosya Kaydet";
+            this.buttonDosyaKaydetEmanet.UseVisualStyleBackColor = true;
+            this.buttonDosyaKaydetEmanet.Click += new System.EventHandler(this.buttonDosyaKaydetEmanet_Click);
+            // 
+            // buttonDosyadanOkuEmanet
+            // 
+            this.buttonDosyadanOkuEmanet.Location = new System.Drawing.Point(12, 219);
+            this.buttonDosyadanOkuEmanet.Name = "buttonDosyadanOkuEmanet";
+            this.buttonDosyadanOkuEmanet.Size = new System.Drawing.Size(209, 23);
+            this.buttonDosyadanOkuEmanet.TabIndex = 32;
+            this.buttonDosyadanOkuEmanet.Text = "Dosyadan Oku";
+            this.buttonDosyadanOkuEmanet.UseVisualStyleBackColor = true;
+            this.buttonDosyadanOkuEmanet.Click += new System.EventHandler(this.buttonDosyadanOkuEmanet_Click);
             // 
             // emanetFormu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonDosyaKaydetEmanet);
+            this.Controls.Add(this.buttonDosyadanOkuEmanet);
+            this.Controls.Add(this.emanet_tc_textBox);
+            this.Controls.Add(this.emanet_tc_label);
+            this.Controls.Add(this.emanet_tel_no_textBox);
+            this.Controls.Add(this.emanet_tel_no_label);
+            this.Controls.Add(this.emanetalankisitextBox);
+            this.Controls.Add(this.emanetalankisilabel);
+            this.Controls.Add(this.emanetkitapaditextBox);
+            this.Controls.Add(this.emanetkitapadilabel);
             this.Controls.Add(this.emanetSüresiUzat);
-            this.Controls.Add(this.emanetGüncelle1);
+            this.Controls.Add(this.emanetGüncelle);
             this.Controls.Add(this.emanetSil);
             this.Controls.Add(this.emanetEkle);
             this.Name = "emanetFormu";
@@ -185,16 +211,18 @@
         #endregion
 
         private System.Windows.Forms.Button emanetSüresiUzat;
-        private System.Windows.Forms.Button emanetGüncelle1;
+        private System.Windows.Forms.Button emanetGüncelle;
         private System.Windows.Forms.Button emanetSil;
         private System.Windows.Forms.Button emanetEkle;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox emanet_tc_textBox;
+        private System.Windows.Forms.Label emanet_tc_label;
+        private System.Windows.Forms.TextBox emanet_tel_no_textBox;
+        private System.Windows.Forms.Label emanet_tel_no_label;
+        private System.Windows.Forms.TextBox emanetalankisitextBox;
+        private System.Windows.Forms.Label emanetalankisilabel;
+        private System.Windows.Forms.TextBox emanetkitapaditextBox;
+        private System.Windows.Forms.Label emanetkitapadilabel;
+        private System.Windows.Forms.Button buttonDosyaKaydetEmanet;
+        private System.Windows.Forms.Button buttonDosyadanOkuEmanet;
     }
 }
