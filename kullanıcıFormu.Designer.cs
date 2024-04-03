@@ -43,6 +43,7 @@
             this.kullanıcı_tel_no_label = new System.Windows.Forms.Label();
             this.buttonDosyaKaydetKullanıcı = new System.Windows.Forms.Button();
             this.buttonDosyadanOkuKullanıcı = new System.Windows.Forms.Button();
+            this.degislik_kaydet_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKisiler)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             this.kisiGüncelle.Text = "Kişi Güncelle";
             this.kisiGüncelle.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.kisiGüncelle.UseVisualStyleBackColor = true;
+            this.kisiGüncelle.Click += new System.EventHandler(this.kisiGüncelle_Click);
             // 
             // silKullanici
             // 
@@ -72,6 +74,7 @@
             this.silKullanici.Text = "Sil     ";
             this.silKullanici.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.silKullanici.UseVisualStyleBackColor = true;
+            this.silKullanici.Click += new System.EventHandler(this.silKullanici_Click);
             // 
             // ekleKullanici
             // 
@@ -85,15 +88,17 @@
             this.ekleKullanici.Text = "        Ekle    ";
             this.ekleKullanici.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.ekleKullanici.UseVisualStyleBackColor = true;
-            this.ekleKullanici.Click += new System.EventHandler(this.ekleKullanici_Click);
+            this.ekleKullanici.Click += new System.EventHandler(this.EkleKullanici_Click);
             // 
             // dgvKisiler
             // 
             this.dgvKisiler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKisiler.Location = new System.Drawing.Point(257, 12);
             this.dgvKisiler.Name = "dgvKisiler";
+            this.dgvKisiler.ReadOnly = true;
             this.dgvKisiler.RowHeadersWidth = 51;
             this.dgvKisiler.RowTemplate.Height = 24;
+            this.dgvKisiler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKisiler.Size = new System.Drawing.Size(518, 354);
             this.dgvKisiler.TabIndex = 7;
             // 
@@ -105,7 +110,6 @@
             this.kullanıcıisimlabel.Size = new System.Drawing.Size(31, 16);
             this.kullanıcıisimlabel.TabIndex = 8;
             this.kullanıcıisimlabel.Text = "İsim";
-            this.kullanıcıisimlabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // kullanıcıisimtextBox
             // 
@@ -113,7 +117,6 @@
             this.kullanıcıisimtextBox.Name = "kullanıcıisimtextBox";
             this.kullanıcıisimtextBox.Size = new System.Drawing.Size(100, 22);
             this.kullanıcıisimtextBox.TabIndex = 9;
-            this.kullanıcıisimtextBox.TextChanged += new System.EventHandler(this.kullanıcıisimtextBox_TextChanged);
             // 
             // kullanıcısoyisimtextBox
             // 
@@ -146,7 +149,6 @@
             this.kullanıcı_tc_label.Size = new System.Drawing.Size(90, 16);
             this.kullanıcı_tc_label.TabIndex = 12;
             this.kullanıcı_tc_label.Text = "T.C. Kimlik No";
-            this.kullanıcı_tc_label.Click += new System.EventHandler(this.label3_Click);
             // 
             // kullanıcı_tel_no_textBox
             // 
@@ -184,11 +186,23 @@
             this.buttonDosyadanOkuKullanıcı.UseVisualStyleBackColor = true;
             this.buttonDosyadanOkuKullanıcı.Click += new System.EventHandler(this.buttonDosyadanOkuKullanıcı_Click);
             // 
+            // degislik_kaydet_btn
+            // 
+            this.degislik_kaydet_btn.Location = new System.Drawing.Point(12, 150);
+            this.degislik_kaydet_btn.Name = "degislik_kaydet_btn";
+            this.degislik_kaydet_btn.Size = new System.Drawing.Size(209, 32);
+            this.degislik_kaydet_btn.TabIndex = 30;
+            this.degislik_kaydet_btn.Text = "Değişikliği Kaydet";
+            this.degislik_kaydet_btn.UseVisualStyleBackColor = true;
+            this.degislik_kaydet_btn.Visible = false;
+            this.degislik_kaydet_btn.Click += new System.EventHandler(this.degislik_kaydet_btn_Click);
+            // 
             // kullanıcıFormu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.degislik_kaydet_btn);
             this.Controls.Add(this.buttonDosyaKaydetKullanıcı);
             this.Controls.Add(this.buttonDosyadanOkuKullanıcı);
             this.Controls.Add(this.kullanıcı_tel_no_textBox);
@@ -227,5 +241,6 @@
         private System.Windows.Forms.Label kullanıcı_tel_no_label;
         private System.Windows.Forms.Button buttonDosyaKaydetKullanıcı;
         private System.Windows.Forms.Button buttonDosyadanOkuKullanıcı;
+        private System.Windows.Forms.Button degislik_kaydet_btn;
     }
 }

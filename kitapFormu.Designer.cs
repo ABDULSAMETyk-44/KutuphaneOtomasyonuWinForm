@@ -43,6 +43,7 @@
             this.dgvKitap = new System.Windows.Forms.DataGridView();
             this.buttonDosyadanOkuKitap = new System.Windows.Forms.Button();
             this.buttonDosyaKaydetKitap = new System.Windows.Forms.Button();
+            this.btn_degisiklik_kaydet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKitap)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             this.kitapGüncelle.Text = "Güncelle";
             this.kitapGüncelle.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.kitapGüncelle.UseVisualStyleBackColor = true;
+            this.kitapGüncelle.Click += new System.EventHandler(this.kitapGüncelle_Click);
             // 
             // kitapSil
             // 
@@ -69,6 +71,7 @@
             this.kitapSil.Text = "Sil";
             this.kitapSil.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.kitapSil.UseVisualStyleBackColor = true;
+            this.kitapSil.Click += new System.EventHandler(this.kitapSil_Click);
             // 
             // kitapEkle
             // 
@@ -156,6 +159,7 @@
             this.dgvKitap.Name = "dgvKitap";
             this.dgvKitap.RowHeadersWidth = 51;
             this.dgvKitap.RowTemplate.Height = 24;
+            this.dgvKitap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKitap.Size = new System.Drawing.Size(518, 354);
             this.dgvKitap.TabIndex = 24;
             // 
@@ -179,11 +183,23 @@
             this.buttonDosyaKaydetKitap.UseVisualStyleBackColor = true;
             this.buttonDosyaKaydetKitap.Click += new System.EventHandler(this.buttonDosyaKaydetKitap_Click);
             // 
+            // btn_degisiklik_kaydet
+            // 
+            this.btn_degisiklik_kaydet.Location = new System.Drawing.Point(12, 131);
+            this.btn_degisiklik_kaydet.Name = "btn_degisiklik_kaydet";
+            this.btn_degisiklik_kaydet.Size = new System.Drawing.Size(209, 33);
+            this.btn_degisiklik_kaydet.TabIndex = 28;
+            this.btn_degisiklik_kaydet.Text = "Değişikliği Kaydet";
+            this.btn_degisiklik_kaydet.UseVisualStyleBackColor = true;
+            this.btn_degisiklik_kaydet.Visible = false;
+            this.btn_degisiklik_kaydet.Click += new System.EventHandler(this.btn_degisiklik_kaydet_Click);
+            // 
             // kitapFormu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_degisiklik_kaydet);
             this.Controls.Add(this.buttonDosyaKaydetKitap);
             this.Controls.Add(this.buttonDosyadanOkuKitap);
             this.Controls.Add(this.dgvKitap);
@@ -223,5 +239,6 @@
         private System.Windows.Forms.DataGridView dgvKitap;
         private System.Windows.Forms.Button buttonDosyadanOkuKitap;
         private System.Windows.Forms.Button buttonDosyaKaydetKitap;
+        private System.Windows.Forms.Button btn_degisiklik_kaydet;
     }
 }

@@ -9,22 +9,23 @@ namespace KutuphaneOtomasyonuWinForm
 {
     public class KullanıcıFormuJson
     {
-        public static List<KullanıcıFormuJson> uyeler = new List<KullanıcıFormuJson>();
+        public int Id { get; set; }
+        public string Isim { get; set; }
+        public string Soyisim { get; set; }
+        public string TcKimlikNo { get; set; }
+        public string Telefon { get; set; }
 
-        private string _isim;
-        private string _soyisim;
-        private int _tcKimlikNo;
-        private int _telefon;
-
-        public string Isim { get { return _isim; } set { _isim = value; } }
-        public string Soyisim { get { return _soyisim; } set { _soyisim = value; } }
-        public int TcKimlikNo { get { return _tcKimlikNo; } set { _tcKimlikNo = value; } }
-        public int Telefon { get { return _telefon; } set { _telefon = value; } }
-       
-
-        public void tabloyaEkle(DataTable tablo)
+        public void tabloyaEkle(DataTable dtKisiler)
         {
-            tablo.Rows.Add(new object[] {_isim, _soyisim, _tcKimlikNo, _telefon });
+        
+            DataRow newRow = dtKisiler.NewRow();
+            newRow["ID"] = Id.ToString();
+            newRow["İsim"] = Isim;
+            newRow["Soyisim"] = Soyisim;    
+            newRow["TC"] = TcKimlikNo;
+            newRow["Telefon"] = Telefon;
+            dtKisiler.Rows.Add(newRow);
+
         }
     }
 }
